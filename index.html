@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Wingify</title>
+
+    <!-- Font Awesome -->
+    
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+
+    <style>
+        
+        html,
+        body,
+        .view {
+            height: 100%;
+        }
+        /* Navigation*/
+        
+        .navbar {
+            background-color: white;
+        }
+        
+        .scrolling-navbar {
+            -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+            -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
+            transition: background .5s ease-in-out, padding .5s ease-in-out;
+        }
+        
+        .top-nav-collapse {
+            background-color: #3c4f74;
+        }
+        
+        @media only screen and (max-width: 768px) {
+            .navbar {
+                background-color: #1C2331;
+            }
+        }
+        /*Call to action*/
+        
+        .flex-center {
+            color: #fff;
+        }
+        
+        .view {
+            background: url("img/bg.jpg")no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        
+        #search_box {
+            border: 0px;
+            background: #E2EBF0;
+            width: 300px;
+            border-radius: 50px;
+        }
+      .fa_color {
+            color: #ADC4D0;
+            margin-top: 5px;
+            margin-left: 6px;
+
+        }
+        .fa-stack[data-count]:after{
+            position:absolute;
+            right:0%;
+            top:1%;
+            content: attr(data-count);
+            font-size:60%;
+            padding:.6em;
+            border-radius:999px;
+            line-height:.75em;
+            color: white;
+            background:#00BDBC;
+            text-align:center;
+            min-width:2em;
+            font-weight:bold;
+        }
+        .active_box {
+            background: #E2EBF0; 
+        }
+        #responsecontainer{
+            max-height: 500px;
+            overflow: hidden;
+        }
+        #responsecontainer{
+            overflow: scroll;
+        }
+        input[type=text]{
+            border-bottom: none !important;
+        }
+        input[type=text]:focus{
+            border-bottom: none !important;
+        }
+        .notif_box{
+            display: flex;
+            justify-content: space-between;
+        }
+        .fa-user-img{
+            margin-right: 1em;
+            font-size: 1.5em;
+            height: 50px;
+            width: 50px;
+        }
+        .dropdown-item{
+            margin-bottom: 2px;
+            border-bottom: 1px solid #f1f1f1;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-toggleable-md navbar-dark fixed-top scrolling-navbar">
+        <div class="container">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse"  id="navbarNav1">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <form class="form-inline waves-effect waves-light">
+                            <div id="search_box">
+                                <i class="fa fa-search fa-2x fa_color"></i>
+                                <input class="form-control" type="text">
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mr-auto">
+                    <li id="bell" class="nav-item dropdown btn-group">
+                        <a class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="fa-stack has-badge" id="counter" >
+                                <i class="fa fa-bell-o fa-2x fa-stack-2x fa_color"></i>
+                            </span>
+                        </a>
+                        <div class="dropdown-menu dropdown" aria-labelledby="dropdownMenu1">
+                            <div id="responsecontainer">
+
+                                <!-- comments are being fetched from the database here -->
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fa fa-envelope-o fa-2x fa_color"></i>
+                    </li>
+                </ul>   
+            </div>
+        </div>
+    </nav>
+    <!--/.Navbar-->
+    
+    <!--Mask-->
+    <div class="view hm-black-strong">
+        <div class="full-bg-img flex-center">
+            <ul>
+                <li>
+                    <h1 class="h1-responsive wow fadeInDown" data-wow-delay="0.2s">Wingify</h1></li>
+                <li>
+                    <p class="wow fadeInDown">Technical Evaluation Task</p>
+                </li>
+                <li>
+                    <a href="#" class="btn btn-primary btn-lg wow fadeInLeft" data-wow-delay="0.2s" rel="nofollow">Random Button</a>
+                    <a href="#" class="btn btn-default btn-lg wow fadeInRight" data-wow-delay="0.2s" rel="nofollow">Random Button</a>
+                </li>
+            </ul>
+        </div>
+        <textarea id="countContainer" style="display: none;"></textarea>
+        <div id="repdiv"></div>
+        <div id="repdiv1"></div>
+    </div>
+    <!--/.Mask-->
+
+   
+
+
+    <!-- SCRIPTS -->
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/tether.min.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+
+    <!-- Animations init-->
+    <script>
+        new WOW().init();
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var timeInterval = Math.floor((Math.random() * 20000) + 5000); 
+
+            $("#bell").click(function() {
+                $("#repdiv").load("updateState.php"); // loading the file which marks the comments as read
+            });
+
+            $("#responsecontainer").load("select.php");
+            var refreshId = setInterval(function() {
+                $("#responsecontainer").load('select.php?randval='+ Math.random());  // fetching all the comments               
+            }, 1000);
+            $.ajaxSetup({ cache: false});   
+
+            $("#countContainer").load("selectCount.php");
+            var refreshCountId = setInterval(function() {
+                $("#countContainer").load('selectCount.php?randval='+ Math.random());     
+                    var countUnreadComments = document.getElementById("countContainer").value;
+                    if (countUnreadComments != 0) {
+                        document.getElementById("counter").setAttribute("data-count", countUnreadComments); //fetching the counter value
+                    } else {
+                        document.getElementById("counter").removeAttribute("data-count");
+                    }
+                    
+            }, 500);
+            $.ajaxSetup({ cache: false});       
+
+            $("#repdiv1").load("addNew.php");
+            var addNewComment = setInterval(function() {
+                $("#repdiv1").load('addNew.php?randval='+ Math.random()); // loading the file which addds a new notification to the databse in random time intervals                
+            }, timeInterval);
+        });   
+    </script>
+
+
+</body>
+
+</html>
